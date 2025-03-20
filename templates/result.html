@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Traffic Anamoly </title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #444;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #007bff;
+        }
+
+        /* Section Styling */
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Anomalies Styling */
+        .anomalies-message {
+            font-size: 2em;
+            color: #ff4d4d;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            section {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            section img {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Network Traffic Analysis Results</h1>
+    
+    <section>
+        <h2>Protocol Distribution</h2>
+        <img src="data:image/png;base64,{{ protocol_img }}" alt="Protocol Distribution">
+    </section>
+
+    <section>
+        <h2>Payload Size Distribution</h2>
+        <img src="data:image/png;base64,{{ payload_img }}" alt="Payload Size Distribution">
+    </section>
+
+    <section>
+        <h2>Time Delta Distribution</h2>
+        <img src="data:image/png;base64,{{ time_delta_img }}" alt="Time Delta Distribution">
+    </section>
+
+    {% if anomalies_img %}
+        <section>
+            <h2>Potential Anomalies Detected</h2>
+            <img src="data:image/png;base64,{{ anomalies_img }}" alt="Anomalies">
+            <p class="anomalies-message">Anomalies Detected: Large Payloads!</p>
+        </section>
+    {% endif %}
+</body>
+</html>

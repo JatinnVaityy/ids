@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intrusion Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">DeCoders</a>
+            <ul class="navbar-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#network-traffic">Network Traffic</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="home" class="landing-container">
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='intrusion.jpg') }}" alt="Intrusion Detection">
+        </div>
+        <div class="info-section">
+            <h1>Intrusion Detection System</h1>
+            <p>
+                An Intrusion Detection System (IDS) monitors network traffic for <strong>suspicious activities</strong> and security threats. It helps prevent <strong>cyber attacks</strong> and unauthorized access by analyzing data packets in <strong>real-time</strong>.
+            </p>
+        </div>
+    </div>
+
+    <div id="network-traffic" class="network-traffic">
+        <div class="network-traffic-content">
+            
+            <div class="network-traffic-info">
+                <h2>📡 Network Traffic Anamoly Detection</h2>
+                <p>
+                    Network traffic analysis is a critical component of cybersecurity. It involves examining data packets flowing through a network to detect anomalies, potential threats, and performance issues. By analyzing network traffic, security professionals can:
+                </p>
+                <ul>
+                    <li>Identify unauthorized access attempts</li>
+                    <li>Detect malware and other malicious activities</li>
+                    <li>Monitor bandwidth usage and network performance</li>
+                    <li>Ensure compliance with security policies</li>
+                </ul>
+            </div>
+            <div class="network-traffic-image">
+                <img src="{{ url_for('static', filename='net.jpg') }}" alt="Network Traffic Analysis">
+            </div>
+        </div>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="file">Upload your CSV file for analysis:</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Upload & Analyze</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

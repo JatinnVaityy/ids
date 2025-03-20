@@ -1,0 +1,498 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.landing-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.image-section {
+    flex: 1;
+    background-color: #1e3a8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-section {
+    flex: 1;
+    background-color: #bfdbfe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.info-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.network-traffic {
+    background-color: #bfdbfe;
+    padding: 3rem;
+    text-align: center;
+}
+
+.network-traffic h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+}
+
+.network-traffic form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.network-traffic label {
+    font-size: 1.2rem;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+}
+
+.network-traffic input[type="file"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #3b82f6;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.network-traffic button {
+    padding: 0.75rem 1.5rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.network-traffic button:hover {
+    background-color: #1d4ed8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.result-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.result-section h2 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #e2e8f0;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+    .landing-container {
+        flex-direction: column;
+    }
+
+    .image-section, .info-section {
+        flex: none;
+        width: 100%;
+    }
+
+    .info-section {
+        padding: 2rem 1rem;
+    }
+
+    .network-traffic {
+        padding: 2rem 1rem;
+    }
+
+    .network-traffic input[type="file"] {
+        width: 100%;
+    }
+}
+
+.navbar {
+    background-color: #1e3a8a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 1.5rem;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #bfdbfe;
+}
+
+/* Update these existing styles to account for the fixed navbar */
+.landing-container {
+    padding-top: 60px; /* Height of the navbar */
+    min-height: calc(100vh - 60px);
+}
+
+.network-traffic {
+    padding-top: 80px; /* Extra padding to account for navbar */
+    margin-top: -60px; /* Offset the padding-top of landing-container */
+}
+
+/* Add responsive styles for the navbar */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        margin-top: 1rem;
+    }
+
+    .navbar-menu li {
+        margin-left: 0;
+        margin-right: 1.5rem;
+    }
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.navbar {
+    background-color: #1a237e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 1.5rem;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #82b1ff;
+}
+
+.landing-container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+.image-section {
+    flex: 1;
+    background-color: #1a237e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-section {
+    flex: 1;
+    background-color: #3f51b5;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.info-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.network-traffic {
+    min-height: 100vh;
+    background-color: #e8eaf6;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.network-traffic-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.network-traffic-info {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.network-traffic-image {
+    flex: 1;
+}
+
+.network-traffic-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.network-traffic h2 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 1rem;
+}
+
+.network-traffic p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.network-traffic ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.network-traffic ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.network-traffic ul li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #3f51b5;
+}
+
+.network-traffic form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.network-traffic label {
+    font-size: 1.2rem;
+    color: #1a237e;
+    margin-bottom: 0.5rem;
+}
+
+.network-traffic input[type="file"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #3f51b5;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.network-traffic button {
+    padding: 0.75rem 1.5rem;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.network-traffic button:hover {
+    background-color: #1a237e;
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        margin-top: 1rem;
+    }
+
+    .navbar-menu li {
+        margin-left: 0;
+        margin-right: 1.5rem;
+    }
+
+    .landing-container {
+        flex-direction: column;
+    }
+
+    .image-section, .info-section {
+        flex: none;
+        width: 100%;
+    }
+
+    .network-traffic-content {
+        flex-direction: column;
+    }
+
+    .network-traffic-info, .network-traffic-image {
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
